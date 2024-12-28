@@ -29,6 +29,7 @@ const StringCalculator = () => {
 
   return (
     <div className="calculator">
+      <img id="logo" src="https://cdn.prod.website-files.com/6626410e05635d300b393781/66276107ea573b37e95a1225_Incubyte%20Logo.svg" alt="Incubyte Logo" />
       <h1>String Calculator</h1>
 
       {/* Input box */}
