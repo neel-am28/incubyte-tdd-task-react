@@ -15,7 +15,11 @@ describe("add function", () => {
     expect(add("1,5")).toBe(6)
   })
 
-  test("returns sum all numbers in the string", () => {
+  test("returns sum of all numbers in the string", () => {
     expect(add("1,5,2")).toBe(8)
+  })
+
+  test("returns sum of numbers separated by new line character or a comma", () => {
+    expect(add("1\n2,3")).toBe(6)
   })
 })

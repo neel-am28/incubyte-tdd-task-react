@@ -3,7 +3,7 @@ export const add = (numString) => {
     return 0
   }
   let numbersArray = []
-  numbersArray = numString.split(",").map((nums) => Number(nums))
+  numbersArray = numString.split(/[\n,]/).map((nums) => Number(nums))
   if (numbersArray.length == 1) {
     return numbersArray[0]
   } else {
