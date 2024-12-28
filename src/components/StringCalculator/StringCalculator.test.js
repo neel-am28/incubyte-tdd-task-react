@@ -76,4 +76,20 @@ describe("String Calculator Component", () => {
     fireEvent.click(button)
     expect(screen.getByText(/result:/i)).toHaveTextContent("Result: 3")
   })
+
+  test("clears input and result after calculation", () => {
+    render(<StringCalculator />)
+
+    const input = screen.getByPlaceholderText(/enter numbers here/i)
+    const button = screen.getByText(/calculate/i)
+
+    fireEvent.change(input, {target: {value: "1,2,3"}})
+    fireEvent.click(button)
+
+    expect(screen.getByText(/result:/i)).toHaveTextContent("Result: 6")
+
+    expect(input.value).toBe("")
+
+    expect(screen.getByText(/result:/i)).toHaveTextContent("Result: 6")
+  })
 })
