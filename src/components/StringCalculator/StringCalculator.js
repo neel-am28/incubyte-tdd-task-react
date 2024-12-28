@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 
 import {add} from "../../utils/add"
 
@@ -19,10 +19,11 @@ const StringCalculator = () => {
       setResult(calcResult) // Set the result if no error occurs
       setError("") // Clear any previous error
       setInput("")
-    } catch (e) {
-      setError(e.message) // Set error message if an error occurs
+    } catch (err) {
+      setError(err.message) // Set error message if an error occurs
       setResult(null) // Clear the result if there's an error
       setInput("")
+      console.log(error)
     }
   }
 

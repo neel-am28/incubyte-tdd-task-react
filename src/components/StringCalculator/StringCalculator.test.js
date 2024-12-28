@@ -79,7 +79,6 @@ describe("String Calculator Component", () => {
 
   test("clears input and result after calculation", () => {
     render(<StringCalculator />)
-
     const input = screen.getByPlaceholderText(/enter numbers here/i)
     const button = screen.getByText(/calculate/i)
 
@@ -87,9 +86,22 @@ describe("String Calculator Component", () => {
     fireEvent.click(button)
 
     expect(screen.getByText(/result:/i)).toHaveTextContent("Result: 6")
-
     expect(input.value).toBe("")
-
     expect(screen.getByText(/result:/i)).toHaveTextContent("Result: 6")
+  })
+
+  test("displays error when negative numbers are entered", async () => {
+    render(<StringCalculator />)
+
+    const input = screen.getByPlaceholderText(/enter numbers here/i)
+    const button = screen.getByText(/calculate/i)
+
+    fireEvent.change(input, {target: {value: "1,-2,3,-5"}})
+    fireEvent.click(button)
+
+    // Wait for the error message to appear
+    const errorMessage = await screen.findByText(/negative numbers not allowed -2,-5/i)
+
+    expect(errorMessage).toBeInTheDocument()
   })
 })
