@@ -37,7 +37,7 @@ const StringCalculator = () => {
 
       {/* Calculate button */}
       <button onClick={handleCalculate}>
-        <img src="/logo.png" alt="Logo" className="logo" />
+        <img src="https://cdn.prod.website-files.com/6626410e05635d300b393781/6631f1e4bd9216c711361936_5f34c7167f3d24e36b7bab35_Favicon%2032x32.png" alt="Logo" className="logo" />
         Calculate
       </button>
 
