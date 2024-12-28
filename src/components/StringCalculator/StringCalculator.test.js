@@ -31,3 +31,11 @@ describe("add function", () => {
     expect(() => add("1,-2,3,-5")).toThrowError("negative numbers not allowed -2,-5")
   })
 })
+
+describe("String Calculator Component", () => {
+  test("renders input field and button", () => {
+    render(<StringCalculator />)
+    expect(screen.getByPlaceholderText(/enter numbers here/i)).toBeInTheDocument()
+    expect(screen.getByText(/calculate/i)).toBeInTheDocument()
+  })
+})
