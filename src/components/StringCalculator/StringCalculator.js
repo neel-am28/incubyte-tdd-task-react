@@ -38,7 +38,11 @@ const StringCalculator = () => {
       {result !== null && <div className="result">Result: {result}</div>}
 
       {/* Display any errors */}
-      {error && <div className="error">{error}</div>}
+      {error && (
+        <div className="error">
+          <b>Error:</b> {error}
+        </div>
+      )}
     </div>
   )
 }

@@ -1,38 +1,76 @@
+:root {
+  --brand-blue: #0d3253;
+  --brand-green: #cbe07c;
+  --brand-text-color: #111318;
+  --brand-bg-color: #f2f4f7;
+}
+.App,
+button,
+input::placeholder {
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+}
 .App {
-  text-align: center;
+  height: 100vh;
+  background-color: var(--brand-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.calculator {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 30px;
+  background-color: var(--brand-blue);
+  color: var(--brand-bg-color);
+  width: 350px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  margin: 0px;
+  margin-bottom: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input {
+  padding: 10px;
+  margin: 10px;
+  width: 250px;
+  font-size: 16px;
+  border-radius: 5px;
+  outline: none;
+  border: 0px;
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid var(--brand-green);
+  color: var(--brand-bg-color);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 30px;
+  border-radius: 30px;
+  padding: 15px 30px;
+  transition: 300ms ease all;
+}
+
+button:hover {
+  background-color: #9bae51;
+  color: var(--brand-blue);
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.error {
+  margin-top: 20px;
+  color: rgb(252, 61, 61);
+  font-size: 16px;
 }
