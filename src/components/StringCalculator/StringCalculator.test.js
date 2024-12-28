@@ -26,4 +26,8 @@ describe("add function", () => {
   test("returns sum of numbers starting with a custom delimiter", () => {
     expect(add("//;\n1;2")).toBe(3)
   })
+
+  test("throws error if function called with negative numbers", () => {
+    expect(() => add("1,-2,3,-5")).toThrowError("negative numbers not allowed -2,-5")
+  })
 })
