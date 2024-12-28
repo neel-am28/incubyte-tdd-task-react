@@ -18,9 +18,11 @@ const StringCalculator = () => {
       const calcResult = add(input)
       setResult(calcResult) // Set the result if no error occurs
       setError("") // Clear any previous error
+      setInput("")
     } catch (e) {
       setError(e.message) // Set error message if an error occurs
       setResult(null) // Clear the result if there's an error
+      setInput("")
     }
   }
 
@@ -32,7 +34,10 @@ const StringCalculator = () => {
       <input type="text" value={input} onChange={handleInputChange} placeholder="Enter numbers here" />
 
       {/* Calculate button */}
-      <button onClick={handleCalculate}>Calculate</button>
+      <button onClick={handleCalculate}>
+        <img src="/logo.png" alt="Logo" className="logo" />
+        Calculate
+      </button>
 
       {/* Display the result */}
       {result !== null && <div className="result">Result: {result}</div>}
