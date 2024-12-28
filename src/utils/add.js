@@ -13,12 +13,13 @@ export const add = (rawInput) => {
     const indexAfterDoubleSlash = numString.indexOf("//") + 2 // 2 to move after the '//'
     const afterSlash = numString.substring(indexAfterDoubleSlash)
     const delimiterString = afterSlash[0]
-    numString = afterSlash.substring(1) // Remove empty strings from split
+    numString = afterSlash.substring(1)
 
-    numbersArray = formatNumberString(numString, delimiterString) // Split by custom delimiter
+    numbersArray = formatNumberString(numString, delimiterString)
   } else {
     // Handle case for default delimiters (comma and newline)
-    numbersArray = formatNumberString(numString, /[\n,]/) // Split by newline or comma
+    const regex = /[\n,]+/
+    numbersArray = formatNumberString(numString, regex)
   }
 
   // Filter out negative numbers

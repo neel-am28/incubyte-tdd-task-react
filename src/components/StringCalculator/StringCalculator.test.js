@@ -51,11 +51,29 @@ describe("String Calculator Component", () => {
 
     const input = screen.getByPlaceholderText(/enter numbers here/i)
     const button = screen.getByText(/calculate/i)
-
-    fireEvent.change(input, {target: {value: "1,2,3"}})
-
+    // input 1
+    fireEvent.change(input, {target: {value: "1"}})
     fireEvent.click(button)
+    expect(screen.getByText(/result:/i)).toHaveTextContent("Result: 1")
 
+    // input 2
+    fireEvent.change(input, {target: {value: "1,5"}})
+    fireEvent.click(button)
     expect(screen.getByText(/result:/i)).toHaveTextContent("Result: 6")
+
+    // input 3
+    fireEvent.change(input, {target: {value: "1,5,2"}})
+    fireEvent.click(button)
+    expect(screen.getByText(/result:/i)).toHaveTextContent("Result: 8")
+
+    // input 4
+    fireEvent.change(input, {target: {value: "1\n2,3"}})
+    fireEvent.click(button)
+    expect(screen.getByText(/result:/i)).toHaveTextContent("Result: 6")
+
+    // input 5
+    fireEvent.change(input, {target: {value: "//;\n1;2"}})
+    fireEvent.click(button)
+    expect(screen.getByText(/result:/i)).toHaveTextContent("Result: 3")
   })
 })

@@ -6,7 +6,7 @@
 }
 .App,
 button,
-input::placeholder {
+textarea::placeholder {
   font-family: "Montserrat", serif;
   font-optical-sizing: auto;
 }
@@ -35,7 +35,7 @@ h1 {
   margin-bottom: 30px;
 }
 
-input {
+textarea {
   padding: 10px;
   margin: 10px;
   width: 250px;

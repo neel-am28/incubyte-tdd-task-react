@@ -31,7 +31,7 @@ const StringCalculator = () => {
       <h1>String Calculator</h1>
 
       {/* Input box */}
-      <input type="text" value={input} onChange={handleInputChange} placeholder="Enter numbers here" />
+      <textarea rows="1" type="text" value={input} onChange={handleInputChange} placeholder="Enter numbers here" />
 
       {/* Calculate button */}
       <button onClick={handleCalculate}>
