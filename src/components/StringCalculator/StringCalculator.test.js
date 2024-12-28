@@ -22,4 +22,8 @@ describe("add function", () => {
   test("returns sum of numbers separated by new line character or a comma", () => {
     expect(add("1\n2,3")).toBe(6)
   })
+
+  test("returns sum of numbers starting with a custom delimiter", () => {
+    expect(add("//;\n1;2")).toBe(3)
+  })
 })
