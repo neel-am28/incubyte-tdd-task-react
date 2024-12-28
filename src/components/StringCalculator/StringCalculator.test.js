@@ -1,4 +1,4 @@
-import {render, screen} from "@testing-library/react"
+import {fireEvent, render, screen} from "@testing-library/react"
 import StringCalculator from "./StringCalculator"
 import {add} from "../../utils/add"
 
@@ -37,5 +37,12 @@ describe("String Calculator Component", () => {
     render(<StringCalculator />)
     expect(screen.getByPlaceholderText(/enter numbers here/i)).toBeInTheDocument()
     expect(screen.getByText(/calculate/i)).toBeInTheDocument()
+  })
+
+  test("updates user input when user types", () => {
+    render(<StringCalculator />)
+    const input = screen.getByPlaceholderText(/enter numbers here/i)
+    fireEvent.change(input, {target: {value: "1,2,3"}})
+    expect(input.value).toBe("1,2,3")
   })
 })
