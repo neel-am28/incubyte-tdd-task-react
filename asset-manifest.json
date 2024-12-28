@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/incubyte-tdd-task-react/static/css/main.d12b98d0.css",
+    "main.js": "/incubyte-tdd-task-react/static/js/main.c86200e6.js",
+    "index.html": "/incubyte-tdd-task-react/index.html",
+    "main.d12b98d0.css.map": "/incubyte-tdd-task-react/static/css/main.d12b98d0.css.map",
+    "main.c86200e6.js.map": "/incubyte-tdd-task-react/static/js/main.c86200e6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d12b98d0.css",
+    "static/js/main.c86200e6.js"
+  ]
+}
