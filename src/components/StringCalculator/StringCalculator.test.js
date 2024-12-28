@@ -14,4 +14,8 @@ describe("add function", () => {
   test("returns sum of first two numbers if string length is 2", () => {
     expect(add("1,5")).toBe(6)
   })
+
+  test("returns sum all numbers in the string", () => {
+    expect(add("1,5,2")).toBe(8)
+  })
 })

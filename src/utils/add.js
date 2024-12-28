@@ -6,8 +6,8 @@ export const add = (numString) => {
   numbersArray = numString.split(",").map((nums) => Number(nums))
   if (numbersArray.length == 1) {
     return numbersArray[0]
-  }
-  if (numbersArray.length == 2) {
-    return numbersArray[0] + numbersArray[1]
+  } else {
+    const result = numbersArray.reduce((acc, item) => acc + item, 0)
+    return result
   }
 }
