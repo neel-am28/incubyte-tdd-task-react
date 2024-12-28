@@ -6,18 +6,12 @@ export const add = (numString) => {
   if (numString.startsWith("//")) {
     // eg: //;\n1;2
     const delimiterString = numString.split("\n")[0].slice(2)
-    numbersArray = numString
-      .split("\n")[1] // Get the numbers part
-      .split(delimiterString) // Split by custom delimiter
-      .map((num) => Number(num)) // Convert to numbers
-      .filter((num) => !isNaN(num)) // Filter out NaN values
+    numbersArray = formatNumberString(numString.split("\n")[1], delimiterString)
   } else {
     // Handle case for default delimiter (comma)
-    numbersArray = numString
-      .split(/[\n,]/) // Split by new line or comma delimiter
-      .map((num) => Number(num)) // Convert to numbers
-      .filter((num) => !isNaN(num)) // Filter out NaN values
+    numbersArray = formatNumberString(numString, /[\n,]/)
   }
+
   const negativeNumbers = numbersArray.filter((num) => num < 0)
 
   if (negativeNumbers.length > 0) {
@@ -26,4 +20,12 @@ export const add = (numString) => {
 
   const result = numbersArray.reduce((acc, item) => acc + item, 0)
   return result
+}
+
+// Utility function to format and filter number strings
+const formatNumberString = (str, delimiter) => {
+  return str
+    .split(delimiter)
+    .map((num) => Number(num))
+    .filter((num) => !isNaN(num)) // Filter out NaN values
 }
