@@ -50,6 +50,7 @@ const StringCalculator = () => {
           <b>Error:</b> {error}
         </div>
       )}
+      <h5 style={{color: "lightblue"}}>Created by ~ Neelam Chaubey</h5>
     </div>
   )
 }
