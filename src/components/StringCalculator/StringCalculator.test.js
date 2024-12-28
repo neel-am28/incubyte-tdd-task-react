@@ -45,4 +45,17 @@ describe("String Calculator Component", () => {
     fireEvent.change(input, {target: {value: "1,2,3"}})
     expect(input.value).toBe("1,2,3")
   })
+
+  test("calculates the sum of number string correctly", () => {
+    render(<StringCalculator />)
+
+    const input = screen.getByPlaceholderText(/enter numbers here/i)
+    const button = screen.getByText(/calculate/i)
+
+    fireEvent.change(input, {target: {value: "1,2,3"}})
+
+    fireEvent.click(button)
+
+    expect(screen.getByText(/result:/i)).toHaveTextContent("Result: 6")
+  })
 })
