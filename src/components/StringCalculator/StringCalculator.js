@@ -33,6 +33,12 @@ const StringCalculator = () => {
 
       {/* Calculate button */}
       <button onClick={handleCalculate}>Calculate</button>
+
+      {/* Display the result */}
+      {result !== null && <div className="result">Result: {result}</div>}
+
+      {/* Display any errors */}
+      {error && <div className="error">{error}</div>}
     </div>
   )
 }
